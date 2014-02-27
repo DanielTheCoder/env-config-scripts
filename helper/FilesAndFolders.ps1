@@ -12,7 +12,7 @@ function CopyFileToFolder ([string] $Source,[string] $destination)
     #}  
     
     CreateFolderIfNotExists $destination
-    Copy-Item $source $destination  
+    Copy-Item $source $destination -Force
 }  
 
 function CreateFolderIfNotExists([string] $destinationFolder) 
