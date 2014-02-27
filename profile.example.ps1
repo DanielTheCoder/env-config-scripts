@@ -28,6 +28,9 @@ if(!(Test-Path $env_conf_profilePath)) {
 "@ | Out-File $env_conf_profilePath -Append
 }
 
+if(!(Test-Path $env_conf_modules_user)) {
+	$folder = New-Item $env_conf_modules_user -Force -Type Directory -ErrorAction Stop
+}
 # Load env-conf module from current directory
 Import-Module .\env-conf
 
