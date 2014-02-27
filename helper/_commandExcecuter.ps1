@@ -7,8 +7,7 @@
 function Env-Conf-Excecute (
     [string] $baseCommandName,
     [string] $backupPathOrFolder = $env_conf_backupPathDefault, 
-    [string] $profilePath = $env_conf_profilePath)
-{
+    [string] $profilePath = $env_conf_profilePath) {
     Write-Host "***************************"
     Write-Host "** Env-Conf ***************"
     Write-Host "***************************"
@@ -30,14 +29,12 @@ function Env-Conf-Excecute (
     #Write-Host ""
 
     # Loading profile
-    if (Test-Path -path $profilePath)
-    {
+    if (Test-Path -path $profilePath) {
             Write-Host "Using config: ", $profilePath
             . ($profilePath)
             Write-Host ""
     }
-    else
-    {
+    else {
         $profilePath = "env-conf_profile." + $env:Computername + ".ps1"
         if (Test-Path -path $profilePath)
         {
