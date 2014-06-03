@@ -9,5 +9,5 @@ function BackupConfigs-Env_Conf([string] $backupPath)
 function RestoreConfigs-Env_Conf([string] $backupPath)
 {
     #copyFiletoFolder ($backupPath + "\env-conf\env-conf_profile.ps1") ($env:userprofile + "\Documents\WindowsPowerShell")
-    #copy-item -rec -filter *.ps1 ($backupPath + "\env-conf\") ($env:userprofile + "\Documents\WindowsPowerShell") -force
+    copy-item -rec -filter *.ps1 ($backupPath + "\env-conf\") ($env:userprofile + "\Documents\WindowsPowerShell") -force
 }
